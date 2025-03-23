@@ -67,6 +67,7 @@ GEM
       rake (~> 13)
       zip
     hashdiff (1.0.1)
+    htmlbeautifier (1.4.3)
     http (5.2.0)
       addressable (~> 2.8)
       base64 (~> 0.1)
@@ -192,6 +193,7 @@ DEPENDENCIES
   dotenv
   draft_matchers
   grade_runner (~> 0.0.13)
+  htmlbeautifier
   http
   i18n
   pry
