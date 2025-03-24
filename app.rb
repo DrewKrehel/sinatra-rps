@@ -11,9 +11,9 @@ get("/rock") do
   
   @comp_moves = moves.sample
   
-  if comp_moves == "rock"
+  if @comp_moves == "rock"
     @outcome = "tied"
-  elsif comp_moves == "paper"
+  elsif @comp_moves == "paper"
     @outcome = "lost"
   else
     @outcome = "won"
@@ -22,14 +22,14 @@ get("/rock") do
   erb(:rock)
 end
 
-get{"/paper"} do
+get("/paper") do
   moves = ["rock", "paper", "scissors"]
   
   @comp_moves = moves.sample
   
-  if comp_moves == "paper"
+  if @comp_moves == "paper"
     @outcome = "tied"
-  elsif comp_moves == "scissors"
+  elsif @comp_moves == "scissors"
     @outcome = "lost"
   else
     @outcome = "won"
@@ -38,14 +38,14 @@ get{"/paper"} do
   erb(:paper)
 end
 
-get{"/scissors"} do
+get("/scissors") do
   moves = ["rock", "paper", "scissors"]
   
   @comp_moves = moves.sample
   
-  if comp_moves == "scissors"
+  if @comp_moves == "scissors"
     @outcome = "tied"
-  elsif comp_moves == "rock"
+  elsif @comp_moves == "rock"
     @outcome = "lost"
   else
     @outcome = "won"
