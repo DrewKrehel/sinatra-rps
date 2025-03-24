@@ -3,10 +3,7 @@ require "sinatra/reloader"
 require "htmlbeautifier"
 
 get("/") do
-  "
-  <h1>Welcome to your Sinatra App!</h1>
-  <p>Define some routes in app.rb</p>
-  "
+  erb(:homepage)
 end
 
 get("/rock") do
@@ -39,4 +36,20 @@ get{"/paper"} do
   end
   
   erb(:paper)
+end
+
+get{"/scissors"} do
+  moves = ["rock", "paper", "scissors"]
+  
+  @comp_moves = moves.sample
+  
+  if comp_moves == "scissors"
+    @outcome = "tied"
+  elsif comp_moves == "rock"
+    @outcome = "lost"
+  else
+    @outcome = "won"
+  end
+  
+  erb(:scissors)
 end
